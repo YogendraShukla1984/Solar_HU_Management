@@ -20,10 +20,16 @@ FUNCTION zscm_hu_check.
 
   " BEGIN: Cursor Generated Code
 
+  " Type definition for invalid HU structure
+  TYPES: BEGIN OF gty_invalid_hu,
+           huident TYPE /scwm/de_huident,
+           message TYPE string,
+         END OF gty_invalid_hu.
+
   " All declarations first (NW 7.31 compliance)
   DATA: lt_hu_check TYPE TABLE OF /scwm/aqua,
         lw_hu_check TYPE /scwm/aqua,
-        lw_hu_input TYPE /scwm/s_huident,
+        lw_hu_input TYPE rsdsselopt,
         lw_invalid_hu TYPE gty_invalid_hu,
         lv_count_input TYPE i,
         lv_count_valid TYPE i,
@@ -129,4 +135,5 @@ FUNCTION zscm_hu_check.
   " END: Cursor Generated Code
 
 ENDFUNCTION.
+
 
